@@ -1,6 +1,6 @@
 # Score Keeper Kata
 
-Score Keeper Kata in Java. [Read more](http://kata-log.rocks/score-keeper-kata).
+Score Keeper Kata in Java with "No Primitives" constraint. [Read more](http://kata-log.rocks/score-keeper-kata).
 
 ## Problem
 
