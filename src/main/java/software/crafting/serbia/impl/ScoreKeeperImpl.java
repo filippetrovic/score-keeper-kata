@@ -9,4 +9,9 @@ public class ScoreKeeperImpl implements ScoreKeeper {
     return "000:000";
   }
 
+  @Override
+  public void scoreTeamA1() {
+
+  }
+
 }

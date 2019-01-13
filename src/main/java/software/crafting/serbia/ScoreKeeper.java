@@ -4,4 +4,5 @@ public interface ScoreKeeper {
 
   String getScore();
 
+  void scoreTeamA1();
 }
