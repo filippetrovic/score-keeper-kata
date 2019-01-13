@@ -3,12 +3,16 @@ package software.crafting.serbia;
 import org.junit.Ignore;
 import org.junit.Test;
 import software.crafting.serbia.impl.ScoreKeeperImpl;
+import software.crafting.serbia.impl.formatter.SemaphoreScoreFormatter;
+import software.crafting.serbia.impl.repository.InMemoryMatchRepository;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class ScoreKeeperAcceptanceTest {
 
-  private ScoreKeeper scoreKeeper = new ScoreKeeperImpl(null, null);
+  private ScoreKeeper scoreKeeper = new ScoreKeeperImpl(
+      new SemaphoreScoreFormatter(),
+      new InMemoryMatchRepository());
 
   @Test
   public void shouldReturnZeroZeroAsInitialState() {
