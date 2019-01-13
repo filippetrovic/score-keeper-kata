@@ -17,10 +17,7 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public String getScore() {
-    final int teamAScore = matchRepository.getTeamACurrentScore();
-    final int teamBScore = matchRepository.getTeamBCurrentScore();
-
-    return formatter.format(teamAScore, teamBScore);
+    return formatter.format(matchRepository.getCurrentScore());
   }
 
   @Override

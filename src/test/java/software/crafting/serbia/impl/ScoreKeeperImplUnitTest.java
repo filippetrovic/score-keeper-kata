@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
+import software.crafting.serbia.impl.model.MatchScore;
 import software.crafting.serbia.impl.repository.MatchRepository;
 
 import static org.mockito.Mockito.verify;
@@ -26,18 +27,15 @@ public class ScoreKeeperImplUnitTest {
   @Test
   public void shouldInvokeFormatterWithCurrentScore() {
     // Given
-    when(matchRepository.getTeamACurrentScore())
-        .thenReturn(1);
-
-    when(matchRepository.getTeamBCurrentScore())
-        .thenReturn(0);
+    when(matchRepository.getCurrentScore())
+        .thenReturn(new MatchScore(1, 0));
 
     // When
     scoreKeeper.getScore();
 
     // Then
     verify(formatter)
-        .format(1, 0);
+        .format(new MatchScore(1, 0));
 
   }
 }

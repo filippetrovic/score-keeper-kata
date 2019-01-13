@@ -1,9 +1,9 @@
 package software.crafting.serbia.impl.repository;
 
+import software.crafting.serbia.impl.model.MatchScore;
+
 public interface MatchRepository {
 
-  int getTeamACurrentScore();
-
-  int getTeamBCurrentScore();
+  MatchScore getCurrentScore();
 
 }

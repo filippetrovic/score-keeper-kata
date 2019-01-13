@@ -1,7 +1,9 @@
 package software.crafting.serbia.impl.formatter;
 
+import software.crafting.serbia.impl.model.MatchScore;
+
 public interface ScoreFormatter {
 
-  String format(int teamAScore, int teamBScore);
+  String format(MatchScore matchScore);
 
 }
