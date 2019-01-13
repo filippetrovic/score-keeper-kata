@@ -38,4 +38,17 @@ public class ScoreKeeperImplUnitTest {
         .format(new MatchScore(1, 0));
 
   }
+
+  @Test
+  public void shouldInvokeUpdateOnMatchRepository() {
+    // Given
+
+    // When
+    scoreKeeper.scoreTeamA1();
+
+    // Then
+    verify(matchRepository)
+        .updateScore("A", 1);
+
+  }
 }

@@ -8,4 +8,9 @@ public class InMemoryMatchRepository implements MatchRepository {
   public MatchScore getCurrentScore() {
     return new MatchScore(0, 0);
   }
+
+  @Override
+  public void updateScore(String team, int points) {
+
+  }
 }

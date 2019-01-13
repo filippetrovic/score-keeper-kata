@@ -6,4 +6,5 @@ public interface MatchRepository {
 
   MatchScore getCurrentScore();
 
+  void updateScore(String team, int points);
 }
