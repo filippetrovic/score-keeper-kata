@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.*;
 
 public class ScoreKeeperAcceptanceTest {
 
-  private ScoreKeeper scoreKeeper = new ScoreKeeperImpl();
+  private ScoreKeeper scoreKeeper = new ScoreKeeperImpl(null, null);
 
   @Test
   public void shouldReturnZeroZeroAsInitialState() {
