@@ -1,6 +1,5 @@
 package software.crafting.serbia;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import software.crafting.serbia.impl.ScoreKeeperImpl;
 import software.crafting.serbia.impl.formatter.SemaphoreScoreFormatter;
@@ -29,7 +28,6 @@ public class ScoreKeeperAcceptanceTest {
   }
 
   @Test
-  @Ignore
   public void shouldReturn001ForTeamAAfterTeamAScoresOnePoint() {
     // Given
     scoreKeeper.scoreTeamA1();
