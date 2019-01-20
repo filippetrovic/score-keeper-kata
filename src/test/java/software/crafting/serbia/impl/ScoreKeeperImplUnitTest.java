@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
+import software.crafting.serbia.impl.model.Home;
 import software.crafting.serbia.impl.model.MatchScore;
 import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
@@ -50,7 +51,7 @@ public class ScoreKeeperImplUnitTest {
 
     // Then
     verify(matchRepository)
-        .updateScore(new TeamScoredEvent(new Team("A"), 1));
+        .updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
 
   }
 }

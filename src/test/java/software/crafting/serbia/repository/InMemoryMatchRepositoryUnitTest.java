@@ -1,6 +1,7 @@
 package software.crafting.serbia.repository;
 
 import org.junit.Test;
+import software.crafting.serbia.impl.model.Home;
 import software.crafting.serbia.impl.model.MatchScore;
 import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
@@ -15,8 +16,8 @@ public class InMemoryMatchRepositoryUnitTest {
   @Test
   public void shouldRecordTwoPointForTeamA() {
     // Given
-    repository.updateScore(new TeamScoredEvent(new Team("A"), 1));
-    repository.updateScore(new TeamScoredEvent(new Team("A"), 1));
+    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
+    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();
@@ -30,8 +31,8 @@ public class InMemoryMatchRepositoryUnitTest {
   @Test
   public void shouldRecordOnePointForTeamA() {
     // Given
-    repository.updateScore(new TeamScoredEvent(new Team("A"), 1));
-    repository.updateScore(new TeamScoredEvent(new Team("B"), 2));
+    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
+    repository.updateScore(new TeamScoredEvent(new Team("B", Home.AWAY), 2));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();

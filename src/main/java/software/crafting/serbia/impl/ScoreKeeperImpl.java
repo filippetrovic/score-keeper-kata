@@ -2,14 +2,15 @@ package software.crafting.serbia.impl;
 
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
+import software.crafting.serbia.impl.model.Home;
 import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.MatchRepository;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 
-  public static final Team TEAM_A = new Team("A");
-  public static final Team TEAM_B = new Team("B");
+  public static final Team TEAM_A = new Team("A", Home.HOME);
+  public static final Team TEAM_B = new Team("B", Home.AWAY);
 
   private ScoreFormatter formatter;
 
