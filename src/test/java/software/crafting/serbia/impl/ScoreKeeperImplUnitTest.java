@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
 import software.crafting.serbia.impl.model.MatchScore;
 import software.crafting.serbia.impl.repository.MatchRepository;
+import software.crafting.serbia.impl.repository.TeamScoredEvent;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -48,7 +49,7 @@ public class ScoreKeeperImplUnitTest {
 
     // Then
     verify(matchRepository)
-        .updateScore("A", 1);
+        .updateScore(new TeamScoredEvent("A", 1));
 
   }
 }

@@ -13,11 +13,11 @@ public class InMemoryMatchRepository implements MatchRepository {
   }
 
   @Override
-  public void updateScore(String team, int points) {
-    if ("A".equalsIgnoreCase(team)) {
-      teamAPoints += points;
-    } else if ("B".equalsIgnoreCase(team)) {
-      teamBPoints += points;
+  public void updateScore(TeamScoredEvent teamScoredEvent) {
+    if ("A".equalsIgnoreCase(teamScoredEvent.getTeam())) {
+      teamAPoints += teamScoredEvent.getPoints();
+    } else if ("B".equalsIgnoreCase(teamScoredEvent.getTeam())) {
+      teamBPoints += teamScoredEvent.getPoints();
     }
   }
 }
