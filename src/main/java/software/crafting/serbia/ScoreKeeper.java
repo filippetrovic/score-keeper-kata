@@ -8,4 +8,7 @@ public interface ScoreKeeper {
 
   void scoreTeamB1();
 
+  void scoreTeamA2();
+
+  void scoreTeamB2();
 }

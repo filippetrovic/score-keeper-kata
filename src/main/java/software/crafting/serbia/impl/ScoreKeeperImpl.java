@@ -36,4 +36,14 @@ public class ScoreKeeperImpl implements ScoreKeeper {
     matchRepository.updateScore(new TeamScoredEvent(TEAM_B, 1));
   }
 
+  @Override
+  public void scoreTeamA2() {
+    matchRepository.updateScore(new TeamScoredEvent(TEAM_A, 2));
+  }
+
+  @Override
+  public void scoreTeamB2() {
+    matchRepository.updateScore(new TeamScoredEvent(TEAM_B, 2));
+  }
+
 }
