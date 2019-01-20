@@ -4,19 +4,19 @@ import java.util.Objects;
 
 public class MatchScore {
 
-  private final int homeScore;
-  private final int awayScore;
+  private final Points homeScore;
+  private final Points awayScore;
 
-  public MatchScore(int homeScore, int awayScore) {
+  public MatchScore(Points homeScore, Points awayScore) {
     this.homeScore = homeScore;
     this.awayScore = awayScore;
   }
 
-  public int getHomeScore() {
+  public Points getHomeScore() {
     return homeScore;
   }
 
-  public int getAwayScore() {
+  public Points getAwayScore() {
     return awayScore;
   }
 
@@ -29,8 +29,8 @@ public class MatchScore {
       return false;
     }
     MatchScore that = (MatchScore) o;
-    return homeScore == that.homeScore &&
-        awayScore == that.awayScore;
+    return Objects.equals(homeScore, that.homeScore) &&
+        Objects.equals(awayScore, that.awayScore);
   }
 
   @Override

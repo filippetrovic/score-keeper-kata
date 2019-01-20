@@ -3,6 +3,7 @@ package software.crafting.serbia.impl;
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
 import software.crafting.serbia.impl.model.Home;
+import software.crafting.serbia.impl.model.Points;
 import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.MatchRepository;
@@ -28,22 +29,22 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    matchRepository.updateScore(TeamScoredEvent.of(TEAM_A, 1));
+    matchRepository.updateScore(TeamScoredEvent.of(TEAM_A, new Points(1)));
   }
 
   @Override
   public void scoreTeamB1() {
-    matchRepository.updateScore(TeamScoredEvent.of(TEAM_B, 1));
+    matchRepository.updateScore(TeamScoredEvent.of(TEAM_B, new Points(1)));
   }
 
   @Override
   public void scoreTeamA2() {
-    matchRepository.updateScore(TeamScoredEvent.of(TEAM_A, 2));
+    matchRepository.updateScore(TeamScoredEvent.of(TEAM_A, new Points(2)));
   }
 
   @Override
   public void scoreTeamB2() {
-    matchRepository.updateScore(TeamScoredEvent.of(TEAM_B, 2));
+    matchRepository.updateScore(TeamScoredEvent.of(TEAM_B, new Points(2)));
   }
 
 }

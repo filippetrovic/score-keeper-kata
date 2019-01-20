@@ -8,6 +8,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
 import software.crafting.serbia.impl.model.Home;
 import software.crafting.serbia.impl.model.MatchScore;
+import software.crafting.serbia.impl.model.Points;
 import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.MatchRepository;
@@ -31,14 +32,14 @@ public class ScoreKeeperImplUnitTest {
   public void shouldInvokeFormatterWithCurrentScore() {
     // Given
     when(matchRepository.getCurrentScore())
-        .thenReturn(new MatchScore(1, 0));
+        .thenReturn(new MatchScore(new Points(1), new Points(0)));
 
     // When
     scoreKeeper.getScore();
 
     // Then
     verify(formatter)
-        .format(new MatchScore(1, 0));
+        .format(new MatchScore(new Points(1), new Points(0)));
 
   }
 
@@ -51,7 +52,7 @@ public class ScoreKeeperImplUnitTest {
 
     // Then
     verify(matchRepository)
-        .updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), 1));
+        .updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), new Points(1)));
 
   }
 }

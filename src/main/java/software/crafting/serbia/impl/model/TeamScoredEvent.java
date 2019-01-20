@@ -5,14 +5,14 @@ import java.util.Objects;
 public class TeamScoredEvent {
 
   private final Team team;
-  private final int points;
+  private final Points points;
 
-  private TeamScoredEvent(Team team, int points) {
+  private TeamScoredEvent(Team team, Points points) {
     this.team = team;
     this.points = points;
   }
 
-  public static TeamScoredEvent of(Team team, int points) {
+  public static TeamScoredEvent of(Team team, Points points) {
     return new TeamScoredEvent(team, points);
   }
 
@@ -20,7 +20,7 @@ public class TeamScoredEvent {
     return team;
   }
 
-  public int getPoints() {
+  public Points getPoints() {
     return points;
   }
 
@@ -33,7 +33,7 @@ public class TeamScoredEvent {
       return false;
     }
     TeamScoredEvent that = (TeamScoredEvent) o;
-    return points == that.points &&
+    return Objects.equals(points,that.points) &&
         Objects.equals(team, that.team);
   }
 
