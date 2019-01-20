@@ -6,7 +6,7 @@ public class SemaphoreScoreFormatter implements ScoreFormatter {
 
   @Override
   public String format(MatchScore matchScore) {
-    return String.format("%03d:%03d", matchScore.getTeamAScore(), matchScore.getTeamBScore());
+    return String.format("%03d:%03d", matchScore.getHomeScore(), matchScore.getAwayScore());
   }
 
 }

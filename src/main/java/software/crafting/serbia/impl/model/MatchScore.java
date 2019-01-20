@@ -4,20 +4,20 @@ import java.util.Objects;
 
 public class MatchScore {
 
-  private final int teamAScore;
-  private final int teamBScore;
+  private final int homeScore;
+  private final int awayScore;
 
-  public MatchScore(int teamAScore, int teamBScore) {
-    this.teamAScore = teamAScore;
-    this.teamBScore = teamBScore;
+  public MatchScore(int homeScore, int awayScore) {
+    this.homeScore = homeScore;
+    this.awayScore = awayScore;
   }
 
-  public int getTeamAScore() {
-    return teamAScore;
+  public int getHomeScore() {
+    return homeScore;
   }
 
-  public int getTeamBScore() {
-    return teamBScore;
+  public int getAwayScore() {
+    return awayScore;
   }
 
   @Override
@@ -29,20 +29,20 @@ public class MatchScore {
       return false;
     }
     MatchScore that = (MatchScore) o;
-    return teamAScore == that.teamAScore &&
-        teamBScore == that.teamBScore;
+    return homeScore == that.homeScore &&
+        awayScore == that.awayScore;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(teamAScore, teamBScore);
+    return Objects.hash(homeScore, awayScore);
   }
 
   @Override
   public String toString() {
     return "MatchScore{" +
-        "teamAScore=" + teamAScore +
-        ", teamBScore=" + teamBScore +
+        "homeScore=" + homeScore +
+        ", awayScore=" + awayScore +
         '}';
   }
 }
