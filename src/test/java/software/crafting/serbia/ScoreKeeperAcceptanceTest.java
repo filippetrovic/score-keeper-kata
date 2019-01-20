@@ -74,4 +74,23 @@ public class ScoreKeeperAcceptanceTest {
 
   }
 
+  @Test
+  public void shouldReturn006vs006AfterBothTeamsScoreOneTwoAndThreePoints() {
+    // Given
+    scoreKeeper.scoreTeamB2();
+    scoreKeeper.scoreTeamB3();
+    scoreKeeper.scoreTeamA1();
+    scoreKeeper.scoreTeamA3();
+    scoreKeeper.scoreTeamB1();
+    scoreKeeper.scoreTeamA2();
+
+    // When
+    String result = scoreKeeper.getScore();
+
+    // Then
+    assertThat(result)
+        .isEqualTo("006:006");
+
+  }
+
 }

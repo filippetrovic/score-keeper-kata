@@ -11,4 +11,8 @@ public interface ScoreKeeper {
   void scoreTeamA2();
 
   void scoreTeamB2();
+
+  void scoreTeamA3();
+
+  void scoreTeamB3();
 }
