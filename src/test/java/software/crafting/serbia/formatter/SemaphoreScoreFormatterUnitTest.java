@@ -17,11 +17,11 @@ public class SemaphoreScoreFormatterUnitTest {
   @Parameters(name = "{index}: {0} -> {1}")
   public static Iterable<Object[]> data() {
     return Arrays.asList(new Object[][]{
-        {new MatchScore(new Points(0), new Points(0)), "000:000"},
-        {new MatchScore(new Points(1), new Points(0)), "001:000"},
-        {new MatchScore(new Points(0), new Points(1)), "000:001"},
-        {new MatchScore(new Points(10), new Points(109)), "010:109"},
-        {new MatchScore(new Points(200), new Points(201)), "200:201"},
+        {new MatchScore(Points.of(0), Points.of(0)), "000:000"},
+        {new MatchScore(Points.of(1), Points.of(0)), "001:000"},
+        {new MatchScore(Points.of(0), Points.of(1)), "000:001"},
+        {new MatchScore(Points.of(10), Points.of(109)), "010:109"},
+        {new MatchScore(Points.of(200), Points.of(201)), "200:201"},
     });
   }
 

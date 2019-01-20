@@ -14,8 +14,8 @@ public class InMemoryMatchRepository implements MatchRepository {
 
   @Override
   public MatchScore getCurrentScore() {
-    Points homeTeamPoints = points.getOrDefault(Home.HOME, new Points(0));
-    Points awayTeamPoints = points.getOrDefault(Home.AWAY, new Points(0));
+    Points homeTeamPoints = points.getOrDefault(Home.HOME, Points.zero());
+    Points awayTeamPoints = points.getOrDefault(Home.AWAY, Points.zero());
     return new MatchScore(homeTeamPoints, awayTeamPoints);
   }
 

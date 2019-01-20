@@ -6,8 +6,16 @@ public class Points {
 
   private final int points;
 
-  public Points(int points) {
+  private Points(int points) {
     this.points = points;
+  }
+
+  public static Points of(int points) {
+    return new Points(points);
+  }
+
+  public static Points zero() {
+    return Points.of(0);
   }
 
   public int asInt() {
@@ -15,7 +23,7 @@ public class Points {
   }
 
   public Points plus(Points other) {
-    return new Points(points + other.points);
+    return of(points + other.points);
   }
 
   @Override
