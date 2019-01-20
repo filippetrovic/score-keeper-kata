@@ -25,4 +25,9 @@ public class ScoreKeeperImpl implements ScoreKeeper {
     matchRepository.updateScore("A", 1);
   }
 
+  @Override
+  public void scoreTeamB1() {
+    matchRepository.updateScore("B", 1);
+  }
+
 }

@@ -1,5 +1,6 @@
 package software.crafting.serbia.repository;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import software.crafting.serbia.impl.model.MatchScore;
 import software.crafting.serbia.impl.repository.InMemoryMatchRepository;
@@ -25,5 +26,19 @@ public class InMemoryMatchRepositoryUnitTest {
 
   }
 
+  @Test
+  public void shouldRecordOnePointForTeamA() {
+    // Given
+    repository.updateScore("A", 1);
+    repository.updateScore("B", 2);
+
+    // When
+    final MatchScore currentScore = repository.getCurrentScore();
+
+    // Then
+    assertThat(currentScore)
+        .isEqualTo(new MatchScore(1, 2));
+
+  }
 
 }

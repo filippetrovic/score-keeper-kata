@@ -40,4 +40,21 @@ public class ScoreKeeperAcceptanceTest {
         .isEqualTo("001:000");
 
   }
+
+  @Test
+  public void shouldReturn001vs002AfterTeamAScoresOnePointAndTeamBScoresTwoTimesOnePoint() {
+    // Given
+    scoreKeeper.scoreTeamA1();
+    scoreKeeper.scoreTeamB1();
+    scoreKeeper.scoreTeamB1();
+
+    // When
+    String result = scoreKeeper.getScore();
+
+    // Then
+    assertThat(result)
+        .isEqualTo("001:002");
+
+  }
+
 }
