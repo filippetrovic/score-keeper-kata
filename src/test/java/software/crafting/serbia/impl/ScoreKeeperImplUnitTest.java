@@ -51,7 +51,7 @@ public class ScoreKeeperImplUnitTest {
 
     // Then
     verify(matchRepository)
-        .updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
+        .updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), 1));
 
   }
 }

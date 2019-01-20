@@ -16,8 +16,8 @@ public class InMemoryMatchRepositoryUnitTest {
   @Test
   public void shouldRecordTwoPointForTeamA() {
     // Given
-    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
-    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), 1));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), 1));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();
@@ -31,8 +31,8 @@ public class InMemoryMatchRepositoryUnitTest {
   @Test
   public void shouldRecordOnePointForTeamA() {
     // Given
-    repository.updateScore(new TeamScoredEvent(new Team("A", Home.HOME), 1));
-    repository.updateScore(new TeamScoredEvent(new Team("B", Home.AWAY), 2));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), 1));
+    repository.updateScore(TeamScoredEvent.of(new Team("B", Home.AWAY), 2));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();

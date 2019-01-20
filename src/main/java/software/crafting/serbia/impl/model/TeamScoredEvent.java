@@ -7,9 +7,13 @@ public class TeamScoredEvent {
   private final Team team;
   private final int points;
 
-  public TeamScoredEvent(Team team, int points) {
+  private TeamScoredEvent(Team team, int points) {
     this.team = team;
     this.points = points;
+  }
+
+  public static TeamScoredEvent of(Team team, int points) {
+    return new TeamScoredEvent(team, points);
   }
 
   public Team getTeam() {
