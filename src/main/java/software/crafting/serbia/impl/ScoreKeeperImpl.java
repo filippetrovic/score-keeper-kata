@@ -8,6 +8,9 @@ import software.crafting.serbia.impl.repository.MatchRepository;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 
+  public static final Team TEAM_A = new Team("A");
+  public static final Team TEAM_B = new Team("B");
+
   private ScoreFormatter formatter;
 
   private MatchRepository matchRepository;
@@ -24,12 +27,12 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    matchRepository.updateScore(new TeamScoredEvent(new Team("A"), 1));
+    matchRepository.updateScore(new TeamScoredEvent(TEAM_A, 1));
   }
 
   @Override
   public void scoreTeamB1() {
-    matchRepository.updateScore(new TeamScoredEvent(new Team("B"), 1));
+    matchRepository.updateScore(new TeamScoredEvent(TEAM_B, 1));
   }
 
 }
