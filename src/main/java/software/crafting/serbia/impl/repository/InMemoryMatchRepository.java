@@ -21,10 +21,10 @@ public class InMemoryMatchRepository implements MatchRepository {
   @Override
   public void updateScore(TeamScoredEvent teamScoredEvent) {
 
-    Integer currentPoints = points.getOrDefault(teamScoredEvent.getTeam().getHome(), 0);
-    Integer newPoints = currentPoints + teamScoredEvent.getPoints();
-
-    points.put(teamScoredEvent.getTeam().getHome(), newPoints);
+    points.merge(
+        teamScoredEvent.getTeam().getHome(),
+        teamScoredEvent.getPoints(),
+        (currentPoints, scoredPoints) -> currentPoints + scoredPoints);
 
   }
 }
