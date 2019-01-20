@@ -17,30 +17,30 @@ public class InMemoryMatchRepositoryUnitTest {
   @Test
   public void shouldRecordTwoPointForTeamA() {
     // Given
-    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.of(1)));
-    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.of(1)));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.one()));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.one()));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();
 
     // Then
     assertThat(currentScore)
-        .isEqualTo(new MatchScore(Points.of(2), Points.of(0)));
+        .isEqualTo(new MatchScore(Points.two(), Points.zero()));
 
   }
 
   @Test
   public void shouldRecordOnePointForTeamA() {
     // Given
-    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.of(1)));
-    repository.updateScore(TeamScoredEvent.of(new Team("B", Home.AWAY), Points.of(2)));
+    repository.updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.one()));
+    repository.updateScore(TeamScoredEvent.of(new Team("B", Home.AWAY), Points.two()));
 
     // When
     final MatchScore currentScore = repository.getCurrentScore();
 
     // Then
     assertThat(currentScore)
-        .isEqualTo(new MatchScore(Points.of(1), Points.of(2)));
+        .isEqualTo(new MatchScore(Points.one(), Points.two()));
 
   }
 

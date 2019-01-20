@@ -32,14 +32,14 @@ public class ScoreKeeperImplUnitTest {
   public void shouldInvokeFormatterWithCurrentScore() {
     // Given
     when(matchRepository.getCurrentScore())
-        .thenReturn(new MatchScore(Points.of(1), Points.of(0)));
+        .thenReturn(new MatchScore(Points.one(), Points.zero()));
 
     // When
     scoreKeeper.getScore();
 
     // Then
     verify(formatter)
-        .format(new MatchScore(Points.of(1), Points.of(0)));
+        .format(new MatchScore(Points.one(), Points.zero()));
 
   }
 
@@ -52,7 +52,7 @@ public class ScoreKeeperImplUnitTest {
 
     // Then
     verify(matchRepository)
-        .updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.of(1)));
+        .updateScore(TeamScoredEvent.of(new Team("A", Home.HOME), Points.one()));
 
   }
 }

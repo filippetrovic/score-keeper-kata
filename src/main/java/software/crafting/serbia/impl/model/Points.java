@@ -18,12 +18,24 @@ public class Points {
     return Points.of(0);
   }
 
+  public static Points one() {
+    return Points.of(1);
+  }
+
+  public static Points two() {
+    return Points.of(2);
+  }
+
+  public static Points three() {
+    return Points.of(3);
+  }
+
   public int asInt() {
     return points;
   }
 
   public Points plus(Points other) {
-    return of(points + other.points);
+    return Points.of(points + other.points);
   }
 
   @Override
