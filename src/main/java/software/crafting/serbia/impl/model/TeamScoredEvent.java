@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class TeamScoredEvent {
 
-  private final String team;
+  private final Team team;
   private final int points;
 
-  public TeamScoredEvent(String team, int points) {
+  public TeamScoredEvent(Team team, int points) {
     this.team = team;
     this.points = points;
   }
 
-  public String getTeam() {
+  public Team getTeam() {
     return team;
   }
 

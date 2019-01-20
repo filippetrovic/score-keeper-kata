@@ -2,6 +2,7 @@ package software.crafting.serbia.impl;
 
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
+import software.crafting.serbia.impl.model.Team;
 import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.MatchRepository;
 
@@ -23,12 +24,12 @@ public class ScoreKeeperImpl implements ScoreKeeper {
 
   @Override
   public void scoreTeamA1() {
-    matchRepository.updateScore(new TeamScoredEvent("A", 1));
+    matchRepository.updateScore(new TeamScoredEvent(new Team("A"), 1));
   }
 
   @Override
   public void scoreTeamB1() {
-    matchRepository.updateScore(new TeamScoredEvent("B", 1));
+    matchRepository.updateScore(new TeamScoredEvent(new Team("B"), 1));
   }
 
 }
