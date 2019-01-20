@@ -1,6 +1,7 @@
 package software.crafting.serbia.impl.repository;
 
 import software.crafting.serbia.impl.model.MatchScore;
+import software.crafting.serbia.impl.model.TeamScoredEvent;
 
 public class InMemoryMatchRepository implements MatchRepository {
 

@@ -2,8 +2,8 @@ package software.crafting.serbia.impl;
 
 import software.crafting.serbia.ScoreKeeper;
 import software.crafting.serbia.impl.formatter.ScoreFormatter;
+import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.MatchRepository;
-import software.crafting.serbia.impl.repository.TeamScoredEvent;
 
 public class ScoreKeeperImpl implements ScoreKeeper {
 

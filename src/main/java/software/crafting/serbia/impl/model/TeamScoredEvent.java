@@ -1,4 +1,4 @@
-package software.crafting.serbia.impl.repository;
+package software.crafting.serbia.impl.model;
 
 import java.util.Objects;
 

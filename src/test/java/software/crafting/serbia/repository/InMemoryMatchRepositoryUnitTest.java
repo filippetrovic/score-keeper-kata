@@ -2,8 +2,8 @@ package software.crafting.serbia.repository;
 
 import org.junit.Test;
 import software.crafting.serbia.impl.model.MatchScore;
+import software.crafting.serbia.impl.model.TeamScoredEvent;
 import software.crafting.serbia.impl.repository.InMemoryMatchRepository;
-import software.crafting.serbia.impl.repository.TeamScoredEvent;
 
 import static org.assertj.core.api.Assertions.*;
 
