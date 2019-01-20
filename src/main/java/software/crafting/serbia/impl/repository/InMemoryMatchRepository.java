@@ -25,7 +25,7 @@ public class InMemoryMatchRepository implements MatchRepository {
     points.merge(
         teamScoredEvent.getTeam().getHome(),
         teamScoredEvent.getPoints(),
-        (currentPoints, scoredPoints) -> currentPoints.plus(scoredPoints));
+        Points::plus);
 
   }
 }
